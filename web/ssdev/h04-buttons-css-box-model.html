@@ -2,6 +2,11 @@
     hover  - :hover  (pseudo-class)
     transition - change smoothly 
     shadow
+
+    margin - out of box
+    border - 
+    padding - inside box
+
 -->
 
 
@@ -21,11 +26,15 @@
             background-color: rgb(200, 0, 0);
             color: white;
             border: none ; 
-            height: 36px ;
-            width: 105px;
+
+            /* top right bottom left  */
+            padding: 10px 16px 10px 16px  ; 
+
+   
             border-radius: 2px;
             cursor: pointer;
             margin-right: 8px;
+            margin-left: 8px;
             transition: opacity 100ms;
         }
 
@@ -43,12 +52,15 @@
             border-style: solid;
             border-width: 1px;
             color: rgb(41, 118, 211);
-            height: 36px;
-            width: 64px;
+
+            padding: 9px 16px 9px 16px  ; 
+
             border-radius: 2px;
             margin-right: 8px;
+            margin-left: 8px ;
             cursor: pointer;
             transition:  background-color .15s , color .15s;
+            vertical-align: top;
         }
 
         .join-button:hover {
@@ -64,8 +76,7 @@
             background-color: rgb(29, 155, 240);
             color: white;
             border: none;
-            height: 36px;
-            width: 64px;
+            padding: 10px 16px 10px 16px  ; 
             border-radius: 18px;
             font-weight: bold;
             cursor: pointer;
@@ -81,9 +92,9 @@
         
         </style>
         
-        <button class="subscribe-button">SUBSCRIBE</button>
+        <button class="subscribe-button">SUBSCRIBE to youtube</button>
 
-        <button class="join-button">JOIN</button>        
+        <button class="join-button">JOIN my channel</button>        
         <button class="tweet-button">Tweet</button>
     
 </body>
