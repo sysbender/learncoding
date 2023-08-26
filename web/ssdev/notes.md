@@ -1,0 +1,8 @@
+
+
+
+* block element - default , entire line : paragraph
+* in-line block element - image, input
+* in-line element - strong
+
+
