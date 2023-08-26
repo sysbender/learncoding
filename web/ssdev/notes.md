@@ -6,3 +6,6 @@
 * in-line element - strong
 
 
+layout :
+* vertical layout
+* horizontal layout
