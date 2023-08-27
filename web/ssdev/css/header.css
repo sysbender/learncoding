@@ -1,0 +1,36 @@
+
+.search-bar {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-left: 20px;
+    display: block;
+}
+
+
+.header-section {
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    width: 150px;
+    background-color: lightpink;
+}
+
+.header-center {
+    background-color: lightgray;
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 25px;
+    max-width: 300px;
+
+}
+
+.header-right {
+    background-color: lightblue;
+    width: 200px;
+
+}
