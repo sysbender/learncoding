@@ -12,3 +12,18 @@ layout :
 
 
 css grid:
+
+* display : grid
+* grid-template-column
+* column-gap
+* row-gap
+* width controlled by parent
+* children number fixed in parent
+
+
+flexbox
+* simular to css grid
+* width controlled by children
+* children number can be changed
+
+
