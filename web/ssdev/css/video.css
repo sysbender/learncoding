@@ -8,6 +8,10 @@
 
 }
 
+.thumbnail-row {
+    position: relative;
+}
+
 .thumbnail {
     /* display: block; */
     width: 100%
@@ -18,9 +22,19 @@
     border-width: 2px;
     border-style: solid;
     border-color: red; */
+}
 
-
-
+.video-time {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    background-color: black;
+    font-family: roboto;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    border-start-end-radius: 2px;
 }
 
 
@@ -85,3 +99,4 @@
     grid-template-columns: 40px 1fr;
     margin-top: 10px;
 }
+
