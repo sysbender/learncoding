@@ -7,4 +7,31 @@
     width: 70px ;
     top: 60px;
     background-color: white;
+    z-index: 200;
+    padding-top: 4px;
+}
+
+.sidebar-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 76px;
+    cursor: pointer;
+    
+}
+
+.sidebar-link:hover{
+    background-color: rgb(236, 234, 234);
+}
+
+.sidebar-link img{
+    height: 32px;    
+    margin-bottom: 4px;
+}
+
+.sidebar-link div{
+    font-family: Roboto;
+    font-size: 10px;
 }
