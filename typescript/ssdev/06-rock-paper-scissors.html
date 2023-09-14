@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    
+    <p>Rock Paper Scissors</p>
+
+    <button onclick="
+        const randomNumber = Math.random()
+        let computerMove = '';
+        let yourMove = 'rock'
+        let result ='';
+        let counterWin=0;
+        let counterLose=0;
+        let counterTie=0;
+        if ( randomNumber >=0 && randomNumber < 1/3 ){
+            computerMove = 'rock'
+
+        }else if ( randomNumber >= 1/3 && randomNumber < 2/3){
+        computerMove ='paper';
+
+        }else if (randomNumber >=2/3 && randomNumber<1 ){
+            computerMove = 'scissors';
+        } 
+
+
+        function compareMoves( move1, move2){
+ 
+            if (move1 === move2){
+                counterTie++;
+                return 'Tie';
+            }else if ( (move1 === 'rock' && move2 === 'scissors') ||
+            ( move1 === 'paper' && move2==='rock') ||
+            ( move1 ==='scissors' && move2 ==='paper') ) {
+                counterWin++;
+                return 'Win';
+
+            }else{
+                counterLose++;
+                return 'Lose';
+            }
+            
+        }
+        result = compareMoves(yourMove, computerMove);
+        console.log(`You picked ${yourMove} , computer picked ${computerMove}, you ${result}.  Tie=${counterTie},Win=${counterTie},Lose=${counterLose}`);
+
+        
+    ">Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+
+
+    <script>
+
+
+    </script>
+</body>
+</html>
