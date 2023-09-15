@@ -108,6 +108,28 @@ shorthand property - do the opposite (assign the value of variable to the proper
 
 shorthand method - 
 
+## Dom - Document Object Model
+
+* document object model
+* document.querySelector()
+* .innerHtml
+* onkeydown=""
+* String() , Number()
+* window object
 
 
-3:49:56
+
+* innerText - without the space
+* innerHtml - with the space
+
+
+click, keydown - event
+onclick, onkeydown - event listener
+
+### window object
+represent the brower- 
+window.document 
+window.console
+window.alert
+
+7:31:00
