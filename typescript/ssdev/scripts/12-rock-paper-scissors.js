@@ -74,6 +74,33 @@
         updateResult(`You ${result}`, movesHtml, scoreText);
       }
 
+      document.querySelector('.rock-move-button').addEventListener('click', ()=>{
+        play('rock');
+      })
+
+      document.querySelector('body').addEventListener('keydown', (event)=>{
+        if(event.key ==='r'){
+          play('rock');
+        }
+
+        if(event.key ==='p'){
+          play('paper');
+        }
+
+        if(event.key ==='s'){
+          play('scissors');
+        }
+
+      })
+
+      document.querySelector('.paper-move-button').addEventListener('click', ()=>{
+        play('paper');
+      })
+
+      document.querySelector('.scissors-move-button').addEventListener('click', ()=>{
+        play('scissors');
+      })
+
       function autoPlay(){
         if(! isAutoPlay){
           idInterval = setInterval(
