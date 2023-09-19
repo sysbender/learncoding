@@ -132,4 +132,36 @@ window.document
 window.console
 window.alert
 
-7:31:00
+## array and loops
+
+Array.
+* isArray
+* length
+* push
+* splice(index, number) - remove a value
+* array2 = array1.slice() - make a copy of array
+* const [first, second] = array1
+* 
+
+### advanced function
+* assign a function to a value
+* pass a function to another function as a parameter
+
+hoisting - call before define a function (not working if we save the function into a variable)
+```javascript
+const func1 = function(){ console.log("hello");}
+
+```
+
+### arrow function
+if only one param, the () are optional
+if only one statement, the {} and  return is optional
+```javascript
+
+        const oneParamFunc = one => {console.log("This is one param");}
+        oneParamFunc();
+        const oneStatement = (x) => x*x;
+        console.log(oneStatement(5));
+```
+
+10:16:00

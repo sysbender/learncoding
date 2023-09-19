@@ -1,5 +1,6 @@
 const todoList = [];
-
+//  add button event listener
+document.querySelector('.add-todo-button').addEventListener( 'click', ()=> addTodo() );
 function handleEnterInput(event){
 
     if (event.key === 'Enter'){
@@ -11,17 +12,30 @@ function handleEnterInput(event){
 
 function todoListString(){
     let result = ''
-    for( let i=0; i<todoList.length; i++ ){
+    // for( let i=0; i<todoList.length; i++ ){
 
-        const {name, dueDate} = todoList[i];
+    //     const {name, dueDate} = todoList[i];
+    //     result += `  
+    //     <span>${ name}</span>    
+
+    //     <span>${ dueDate}</span>
+    //     <button onclick=" todoList.splice(${i},1); renderTodo(); " class="delete-todo-button">Delete</button>
+         
+    //     `
+    // }
+
+    todoList.forEach( (todoItem , index )=>{
+        const {name, dueDate} = todoItem;
         result += `  
         <span>${ name}</span>    
 
         <span>${ dueDate}</span>
-        <button onclick=" todoList.splice(${i},1); renderTodo(); " class="delete-todo-button">Delete</button>
+        <button  class="delete-todo-button js-delete-todo-button">Delete</button>
+   
          
         `
-    }
+             // onclick=" todoList.splice(${index},1); renderTodo(); "
+    })
 
     return result;
 }
@@ -40,4 +54,15 @@ function addTodo(){
 function renderTodo(){
 
     document.querySelector('.js-todo-list').innerHTML = todoListString();
+    document.querySelectorAll('.js-delete-todo-button').forEach( (buttonElement, index)=>{
+        buttonElement.addEventListener('click',()=>{
+            deleteTodo(index);
+        } )
+    })
+}
+
+function deleteTodo(index){
+    //
+    todoList.splice(index, 1);
+    renderTodo();
 }
