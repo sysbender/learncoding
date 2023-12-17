@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced functions</title>
+  </head>
+  <body>
+    <button class="js-button">Click Me</button>
+
+    <script>
+      // let i = 0;
+      // function greeting() { console.log("greeting!!!"); }
+      //   let func1 = function() { console.log("this is func1");}
+      //   let func2 = function greeting() { console.log("hello ");}
+
+      //   greeting();
+      //   setInterval(function(){ console.log(` i = ${i++}`);}
+      //   , 1000);
+
+      //   setTimeout(function() {console.log("Hello1")}, 3000);
+      //   console.log("last line`");
+
+      ["a", "b", "c"].forEach(function (p1, p2, p3) {
+        console.log(p1, p2, p3);
+      });
+
+      const oneParamFunc = (one) => {
+        console.log("This is one param");
+      };
+      oneParamFunc();
+      const oneStatement = (x) => x * x;
+      console.log(oneStatement(5));
+      // method - two style
+      const object2 = {
+        method1: () => {
+          console.log("111");
+        },
+        method2() {
+          console.log("222");
+        },
+      };
+      object2.method1();
+      object2.method2();
+
+      const e1 = () => {
+        console.log("I Click");
+      };
+      const e2 = () => {
+        console.log("I Click 3");
+      };
+      buttonElement = document.querySelector(".js-button");
+      buttonElement.addEventListener("click", e1);
+
+      buttonElement.addEventListener("click", e2);
+      buttonElement.removeEventListener("click", e1);
+
+      let nums = [1, -3, 5];
+      nums1 = nums.filter((value, index) => {
+        return value > 0;
+      });
+      console.log(nums1);
+      double = nums.map((value, index) => {
+        return value * 2;
+      });
+      console.log(double);
+    </script>
+  </body>
+</html>

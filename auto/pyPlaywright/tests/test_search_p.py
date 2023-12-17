@@ -3,9 +3,12 @@ from pages.search import DuckDuckGoSearchPage
 from pages.result import DuckDuckGoResultPage
 from playwright.sync_api import Page, expect
 
-def test_basic_duckduckgo_search_p(page : Page)->None:
-    search_page = DuckDuckGoSearchPage(page)
-    result_page = DuckDuckGoResultPage(page)
+def test_basic_duckduckgo_search_p(page : Page, 
+    search_page: DuckDuckGoSearchPage, 
+    result_page: DuckDuckGoResultPage)->None:
+    
+    # search_page = DuckDuckGoSearchPage(page)
+    # result_page = DuckDuckGoResultPage(page)
 
 
     keyword: str = 'panda'
