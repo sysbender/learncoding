@@ -2,6 +2,11 @@
 
 https://clubmate.fi/array-cheat-sheet
 
+all method of 
+* string - https://louiszhai.github.io/2016/01/12/js.String/
+* object - https://lxchuan12.gitee.io/js-object-api/
+* array -  https://louiszhai.github.io/2017/04/28/array/
+
 ## javascript overview
 
 features

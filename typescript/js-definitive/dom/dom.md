@@ -156,3 +156,46 @@ use spread operation to convert HTMLCollection to array
 [... elem.children]
 
 dom -10 finish 2023-12-14
+
+## intersectionObserver
+
+## slider
+transform
+overflow
+
+```css
+transform: translateX(100%);
+```
+
+
+## lifeCycle Dom Event
+* DOMContentLoaded  - page download, script loaded
+  * if script is at the end of page, no need wait to this event 
+* 'load' - image and css is looaded
+* 'beforeunload'  - before close
+
+
+```javascript
+window.addEventListener('beforeunload', function(e){
+  e.preventDefault();
+  console.log(e)
+  e.returnValue = ''
+})
+```
+
+
+## loading js in html
+
+
+* regular  ``` <script src='script.js' /> ```      - when downloading script, paring html is suspended
+* async  ``` <script async src='script.js' /> ```  - when downloading script when parsing html 
+  * DOMContentLoaded can happen before script 
+  * script order not garante
+* defer  ``` <script defer src='script.js' /> ```   - defer the script execution
+  * DOMContentLoaded only happen after script loaded and executed
+  * script are executed in order
+
+async and defer only for script in head
+regular - can be used script in head or end if body
+
+
