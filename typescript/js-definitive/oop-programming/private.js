@@ -26,9 +26,6 @@ class Person {
   setAge(age) {
     this.#setAge(age);
   }
-  static getCity() {
-    return Person.city;
-  }
 }
 
 const p1 = new Person("John", 12);
