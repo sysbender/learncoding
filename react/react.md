@@ -545,4 +545,183 @@ export default MyComponent;
 
 ### useRef
 
+use cases
+
+- create a variable that stays the same between renders ( setTimeout id etc)
+- selecting and storing DOM elements
+
+* use them in event handler of effects (don't read/write in render logic)
+* not use it to store visible data (which should useState)
+
 ### custom hook
+
+hook is just a function that using any hooks.
+
+- take some parameter
+- return some result that we need in App
+
+## vite
+
+```shell
+npm create vite@4
+
+cd project
+npm install
+npm run dev
+# manual open browser
+
+
+npm install eslint vite-plugin-eslint eslint-config-react-app --save-dev
+
+create .eslintrc.json
+{
+  "extends":"react-app"
+}
+
+import eslint from "vite-plugin-eslint"
+
+  plugins: [react(), eslint()],
+
+
+```
+
+## react-router
+
+npm i react-router-dom@6
+is a third part lib, to map url to UI views
+
+### add route
+
+### nav
+
+- Router
+  - Route -
+    - Outlet - to receive nested components
+    - index - as the default child component
+
+add PageNav component
+
+- Navlink - support active class
+- Link
+
+### url for state management
+
+- easy way to store state in a global place
+- good way to pass data from one page into the next page
+- make it possible to bookmark and share the page with the state
+
+```
+ex.com/app/cityes/mtl?lat=38&lng=-9
+
+```
+
+- param: mtl
+  - `useParams()`
+- query string: lat=38&lng=-9
+  - `useSearchParams()`
+
+1. create new route
+2. link route with state
+3. in router, read the state
+
+```javascript
+const x = useParams();
+console.log("x=", x);
+
+const [searchParams, setSearchParams] = useSearchParams();
+const lat = searchParams.get("lat");
+const lng = searchParams.get("lng");
+```
+
+### programmatically navigation
+
+after submitting a form, navigate to a new page
+
+- navigate component is not used very often
+  - inside nested routes
+  - like a redirect from app/ to app/cities
+
+### style
+
+react separation of concerns
+
+1.  inline css to JSX element using style prop - local
+2.  external css file/ sass , className prop - global
+3.  css modules , one css file per component, - component
+4.  css-in-js (styled component) , create new component
+5.  utility-first Css (tailwindcss) , JSX element
+6.  UI lib
+
+CSS module
+
+- must use class, selector will apply to whole application instead of component
+- css-module will produce a unique class name for each class ,
+  - can not use the class by literal name ` nav become _nav_uy2sd_1`
+  - ## use variable
+
+````javascript
+import styles from "./AppNav.module.css";
+function AppNav() {
+  return <nav className={styles.nav}>AppNav</nav>;
+}
+    ```
+````
+
+- to keep the original name and use as global style:
+  - can be used for 'active' class in <NavLink>
+
+```css
+.nav :global(.active) {
+  background-color: blue;
+  color: red;
+}
+```
+
+## context API
+
+for advanced state management
+
+- to broadcast global state to the entire app
+  - provider : give all child components access to value
+    - value : when value is updated, all consumers re-render
+  - Consumers :all components that read the value
+
+### adv pattern
+
+move - state and setState
+into custom context provider component
+
+## user authentication
+
+1. form - get user id and password
+2. auth - again API, set the result in state, redirect to default page
+3. check - check each url to see if user has access
+
+## performance
+
+1. prevent wasted renders
+
+   - memo
+   - useMemo
+   - useCallback
+   - passing elements as children or regular prop
+
+2. improve app speed / responsiveness
+
+   - useMemo
+   - useCallback
+   - useTransition
+
+3. reduce bundle size
+   - use fewer 3rd-party packages
+   - code splitting and lazy loading
+
+### when re-render component
+
+- state change
+- subscribed context changed
+- parent component re-render
+
+when re-render , the props could change ( prop change is not the reason of re-rendering)
+
+wasted render - a render that didn't produce any change in the DOM
