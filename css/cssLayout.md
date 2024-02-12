@@ -54,3 +54,16 @@ to make the container extends to the float element :
 ## flex box
 
 ## grid
+
+- size and gap
+- align
+- pisition - manually specify column and row
+
+css repeat function
+
+```css
+grid-template-columns: repeat(4, 1fr);
+grid-column: 1 / span 4;
+/* until the end of columns */
+grid-column: 1/-1;
+```
